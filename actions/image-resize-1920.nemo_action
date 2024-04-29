@@ -1,0 +1,12 @@
+[Nemo Action]
+Active=true
+Name=Resize 1920px
+Comment=Resize image to 1920>
+Exec=<scripts/image-resize.sh "%F" "%P">
+EscapeSpaces=false
+Separator=,
+Icon-Name=sound
+Selection=notnone
+Mimetypes=image/*;
+Terminal=false
+Dependencies=mogrify;

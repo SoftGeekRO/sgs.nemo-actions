@@ -1,0 +1,13 @@
+[Nemo Action]
+Active=true
+Name=Convert to PNG
+Comment=Convert any image to PNG
+Exec=<scripts/convert_to_png.sh "%F">
+EscapeSpaces=false
+Separator=,
+Icon-Name=imagemanip
+Stock-Id=imagemanip
+Selection=notnone
+Extensions=jpg;jpeg;bmp;gif;tiff;raw;
+Terminal=false
+Dependencies=mogrify;
