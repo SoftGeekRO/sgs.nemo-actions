@@ -57,8 +57,9 @@ case "$1" in
         mkdir -p ${NEMO_ACTIONS_SCRIPTS_DIR}
     fi
 
-    info "Create soft links for scripts used on Nemo actions"
+    info "Create soft links for scripts used on Nemo actions and make scripts executable for the user"
     for script in ${WORKING_DIR}/actions/scripts/*; do
+        chmod 744 ${script}
         filename=$(basename ${script})
         if ! [[ -h "${NEMO_ACTIONS_SCRIPTS_DIR}/${filename}" ]]; then
             ln -s "${script}" "${NEMO_ACTIONS_SCRIPTS_DIR}/${filename}"
@@ -69,7 +70,6 @@ case "$1" in
   uninstall)
     info "Remove the soft links from Nemo actions"
     for action in ${INSTALL_PATH}/*.nemo_action; do
-        echo $action
         if [ -h "${action}" ] && readlink -f "${action}" | grep -q "${WORKING_DIR}"; then
             rm ${action}
         fi

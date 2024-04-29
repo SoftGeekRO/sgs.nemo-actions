@@ -1,0 +1,18 @@
+[Nemo Action]
+
+# Standard tokens that can be used in the Name, Comment (tooltip) and Exec fields:
+#
+# %U - insert URI list of selection
+# %F - insert path list of selection
+# %P - insert path of parent (current) directory
+# %f or %N (deprecated) - insert display name of first selected file
+# %p - insert display name of parent directory
+# %D - insert device path of file (i.e. /dev/sdb1)
+
+Name=Convert PDF to images
+Comment=Use pdfimages to convert pdf pages to individual images in a single folder pdf2images
+Exec=bash -c "mkdir -p %P/pdf2images; pdfimages -p %F -png %P/pdf2images/"
+Selection=single
+Icon-Name=pdf
+Mimetypes=application/pdf;
+Dependencies=pdfimages;

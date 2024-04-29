@@ -12,9 +12,11 @@ descriptions.
 
 ## Images
 * **image_resize_*** : use **convert** (ImageMagick) to resize images on specific sizes and put the images in a **resize**/ folder
-* **convert_to_*** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, gif
+* **convert_to_*** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, GIF with 90% quality
 
 ## Others actions
+* **pdf2images** : use **pdfimages** command (`poppler-utils` package in Debian) to convert PDF pages in images and place them in "pdf2images" subdir
+* **img2pdf** : use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images
 
 ## Nemo Action installation
 
@@ -86,7 +88,7 @@ before reinstalling your actions.
 
 ## Debug
 
-`nemo -q; NEMO_DEBUG=Actions nemo`
+`nemo -q; NEMO_DEBUG=Actions NEMO_ACTION_VERBOSE=5 nemo --debug`
 
 ## Write an action
 

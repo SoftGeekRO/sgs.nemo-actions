@@ -1,13 +1,13 @@
 [Nemo Action]
 Active=true
 Name=Convert to PNG
-Comment=Convert any image to PNG
-Exec=bash -c "mogrify -format png -quality 9 %F"
-EscapeSpaces=false
+Comment=Convert any image to PNG with 90 quality
+Exec=bash -c "mogrify -format png -quality 90 %F"
+EscapeSpaces=true
 Separator=,
 Icon-Name=imagemanip
 Stock-Id=imagemanip
 Selection=notnone
-Extensions=jpg;jpeg;bmp;gif;tiff;raw;
+Extensions=jpg;jpeg;bmp;gif;tiff;raw;webp;
 Terminal=false
 Dependencies=mogrify;

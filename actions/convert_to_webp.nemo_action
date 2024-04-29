@@ -1,13 +1,13 @@
 [Nemo Action]
 Active=true
 Name=Convert to WebP
-Comment=Convert any image to WebP
-Exec=bash -c "mogrify -format webp -quality 9 %F"
-EscapeSpaces=false
+Comment=Convert any image to WebP with quality 90
+Exec=bash -c "mogrify -format webp -quality 90 %F"
+EscapeSpaces=true
 Separator=,
 Icon-Name=imagemanip
 Stock-Id=imagemanip
 Selection=notnone
-Extensions=jpg;jpeg;bmp;gif;tiff;raw;
+Extensions=jpg;jpeg;bmp;gif;tiff;raw;png;
 Terminal=false
 Dependencies=mogrify;
