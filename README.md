@@ -12,6 +12,7 @@ descriptions.
 
 ## Images
 * **image_resize** : use **mogrify** (ImageMagick) to resize images on specific sizes
+* **convert to** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, gif
 
 ## Others actions
 
@@ -73,11 +74,13 @@ All in one:
 
 ## Nemo Action updating
 
-In a terminal navigate to the `sgs.nemo-actions` folder created when you originally cloned the repo
+In a terminal navigate to the `sgs.nemo-actions` folder created when you
+originally cloned the repo
 
 e.g `cd sgs.nemo-actions`
 
-Once in the correct folder update your local copy with the latest commits, before reinstalling your actions.
+Once in the correct folder update your local copy with the latest commits,
+before reinstalling your actions.
 
 `git pull origin; cd ..`
 
@@ -87,7 +90,8 @@ Once in the correct folder update your local copy with the latest commits, befor
 
 ## Write an action
 
-To make scripts executed to multiple files with a progress bar, use `bash_action.rb`. Simple example:
+To make scripts executed to multiple files with a progress bar,
+use `bash_action.sh`. Simple example:
   - execute `ls` command on each selected files:
     `Exec=<scripts/bash_action.py "ls {}" %F>`
   - same effect, but adding a bash variable:
