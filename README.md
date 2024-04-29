@@ -11,12 +11,14 @@ descriptions.
 ## Audio / Video
 
 ## Images
-* **image_resize_*** : use **convert** (ImageMagick) to resize images on specific sizes and put the images in a **resize**/ folder
+* **image_resize_*** : use **convert** (ImageMagick) to resize images on specific sizes and put the images in a **resize**/ subdir
 * **convert_to_*** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, GIF with 90% quality
 
 ## Others actions
 * **pdf2images** : use **pdfimages** command (`poppler-utils` package in Debian) to convert PDF pages in images and place them in "pdf2images" subdir
 * **img2pdf** : use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images
+* **print** : print selected file using default printer settings
+* **printlibreoffice** : print LibreOffice files with default LibreOffice print settings
 
 ## Nemo Action installation
 
@@ -39,7 +41,7 @@ git clone https://github.com/SoftGeekRO/sgs.nemo-actions.git
 Having cloned the repo you can either install all the actions using the
 commands below or refer to the index of actions to install individual actions.
 
-To install all the nemo actions use the install.sh bash file. Make shure that the
+To install all the nemo actions use the install.sh bash file. Make sure that the
 file is executable.
 
 ```bash
