@@ -11,7 +11,7 @@
 
 Name=Resize 2000px
 Comment=Resize image to 2000px using ImageMagick's
-Exec=bash -c "mkdir -p %P/resized; convert %F -resize '2000>' -set filename: %P/resized/'%t_2000.%e' '%[filename:]'"
+Exec=bash -c "mkdir -p %P/resized; convert %F -resize '2000>' -set filename: %P/resized/'%t_%wx%h.%e' '%[filename:]'"
 EscapeSpaces=true
 Icon-Name=sound
 Selection=notnone

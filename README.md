@@ -11,8 +11,8 @@ descriptions.
 ## Audio / Video
 
 ## Images
-* **image_resize** : use **mogrify** (ImageMagick) to resize images on specific sizes
-* **convert to** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, gif
+* **image_resize_*** : use **convert** (ImageMagick) to resize images on specific sizes and put the images in a **resize**/ folder
+* **convert_to_*** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, gif
 
 ## Others actions
 

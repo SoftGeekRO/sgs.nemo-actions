@@ -1,8 +1,8 @@
 [Nemo Action]
 Active=true
-Name=Convert to PNG
-Comment=Convert any image to PNG
-Exec=bash -c "mogrify -format png -quality 9 %F"
+Name=Convert to WebP
+Comment=Convert any image to WebP
+Exec=bash -c "mogrify -format webp -quality 9 %F"
 EscapeSpaces=false
 Separator=,
 Icon-Name=imagemanip
