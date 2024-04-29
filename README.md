@@ -19,6 +19,7 @@ descriptions.
 * **img2pdf** : use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images
 * **print** : print selected file using default printer settings
 * **printlibreoffice** : print LibreOffice files with default LibreOffice print settings
+* **refresh** : refresh the Nemo interface, basically is a right click menu shortcut for CTRL+R
 
 ## Nemo Action installation
 
