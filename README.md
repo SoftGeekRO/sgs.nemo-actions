@@ -14,12 +14,16 @@ descriptions.
 * **image_resize_*** : use **convert** (ImageMagick) to resize images on specific sizes and put the images in a **resize**/ subdir
 * **convert_to_*** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, GIF with 90% quality
 
-## Others actions
+## PDF actions
 * **pdf2images** : use **pdfimages** command (`poppler-utils` package in Debian) to convert PDF pages in images and place them in "pdf2images" subdir
 * **img2pdf** : use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images
+
+
+## Others actions
 * **print** : print selected file using default printer settings
 * **printlibreoffice** : print LibreOffice files with default LibreOffice print settings
 * **refresh** : refresh the Nemo interface, basically is a right click menu shortcut for CTRL+R
+* **python3** : Run any python file using python3 exec
 
 ## Nemo Action installation
 
@@ -71,11 +75,14 @@ actions folder, under `/~.local/share/nemo/actions`
   - pdfimages (`apt install poppler-utils`) to use PDF images extraction tools
   - pdf_repair (`apt install qpdf`) to use PDF file repairing tools
   - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
+  - img2pdf (`apt install img2pdf`) to convert any image to pdf
   - Thunar (`apt install thunar`) to use mass rename action
 
 All in one:
 
-    apt install imagemagick ffmpeg sox lame flac pdfimages pdf_repair poppler-utils pdf2djvu thunar img2pdf
+```bash
+apt install imagemagick ffmpeg sox lame flac pdfimages pdf_repair poppler-utils pdf2djvu thunar img2pdf
+```
 
 ## Nemo Action updating
 

@@ -3,8 +3,6 @@
 # SoftGeek Romania Nemo actions collection #
 ############################################
 
-trap 'cleanup; exit 1' HUP INT QUIT TERM
-
 E_NOTROOT=87 # Non-root exit error.
 
 [[ "$(id -u)" -eq 0 ]] && { error "You are running this as root. Run as regular user" >&2; exit $E_NOTROOT; }
@@ -32,6 +30,21 @@ notice() {
   { printf '\E[33m'; echo ":: $1"; printf '\E[0m'; } >&2
 }
 
+cleanup() {
+    err=$?
+    info "Cleaning stuff up..."
+    trap '' EXIT INT TERM
+    exit $err
+}
+sig_cleanup() {
+    trap '' EXIT # some shells will call EXIT after the INT handler
+    false # sets $?
+    error "Force exit from script..."
+    cleanup
+}
+trap 'cleanup; exit 1' EXIT
+trap sig_cleanup HUP INT QUIT TERM
+
 case "$1" in
   install)
     info "Install sgs.nemo-actions on current user profile: $CURRENT_USER"
@@ -41,8 +54,6 @@ case "$1" in
       error "Check if you have Nemo installed"
       exit 1
     fi
-
-    echo ${WORKING_DIR}
 
     info "Create soft links for Nemo actions"
     for action in ${WORKING_DIR}/actions/*.nemo_action; do
