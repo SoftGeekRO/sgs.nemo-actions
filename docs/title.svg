@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="80">
     <style>
         thead th:empty {
-        border: thin solid red !important;
-        display: none;
+            border: thin solid red !important;
+            display: none;
         }
         .title {
           transition: fill .3s ease;
@@ -15,7 +15,6 @@
           dominant-baseline: middle;
           font-size: 24px;
         }
-
     </style>
 
     <g class="title">

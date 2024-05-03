@@ -9,15 +9,21 @@ and optimize of documents, images, blog, post, online store images and
 descriptions.
 
 ## Audio / Video
+| | |
+|-|-|
+| | |
 
 ## Images
-* **image_resize_*** : use **convert** (ImageMagick) to resize images on specific sizes and put the images in a **resize**/ subdir
-* **convert_to_*** : use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, GIF with 90% quality
+|                     |                                                                                                    |
+|--------------------:|----------------------------------------------------------------------------------------------------|
+|  **image_resize_*** | (ImageMagick) to resize images on specific sizes and put the images in a **resize**/ subdir        |
+|    **convert_to_*** | use **mogrify** (ImageMagick) to convert images to specific format WebP, PNG, GIF with 90% quality |
 
 ## PDF actions
-* **pdf2images** : use **pdfimages** command (`poppler-utils` package in Debian) to convert PDF pages in images and place them in "pdf2images" subdir
-* **img2pdf** : use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images
-
+|                 |                                                                                                                                    |
+|----------------:|------------------------------------------------------------------------------------------------------------------------------------|
+|  **pdf2images** | use **pdfimages** command (`poppler-utils` package in Debian) to convert PDF pages in images and place them in "pdf2images" subdir |
+|     **img2pdf** | use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images                                 |
 
 ## Others actions
 |                      |                                                                                 |
@@ -26,7 +32,7 @@ descriptions.
 | **printlibreoffice** | print LibreOffice files with default LibreOffice print settings                 |
 |          **refresh** | refresh the Nemo interface, basically is a right click menu shortcut for CTRL+R |
 |          **python3** | Run any python file using python3 exec                                          |
-|      **mass_rename** | Rename multiple files using Bulky applications                                  |
+|      **mass_rename** | Use [Bulky](https://github.com/linuxmint/bulky) to mass rename selected files   |
 
 
 ## Nemo Action installation
@@ -58,10 +64,13 @@ To install all the nemo actions use the **install.sh** bash file and for
 applications use **install_apps.sh**. Make sure that the
 file is executable.
 
-### Install applications
+### Make the install scrips executables
 ```bash
 chmod a+x install.sh install_apps.sh
 ```
+
+### Install dependencies applications
+
 For install_apps.sh script you have:
 _(all|install|uninstall|reinstall|installBulky|uninstallBulky|listPackages)_
 
