@@ -3,7 +3,7 @@
 # SoftGeek Romania Nemo actions collection #
 ############################################
 
-E_NOTROOT=87 # Non-root exit error.
+source $(dirname $0)/lib.sh
 
 [[ "$(id -u)" -eq 0 ]] && { error "You are running this as root. Run as regular user" >&2; exit $E_NOTROOT; }
 
@@ -12,43 +12,24 @@ WORKING_DIR="$(dirname "$(readlink -f "$0")")"
 BASENAME=$(basename $(pwd))
 SCRIPT_NAME=$(basename "$0")
 
-USAGE="Usage: $SCRIPT_NAME {install | uninstall | reinstall}"
-
 INSTALL_PATH="/home/${CURRENT_USER}/.local/share/nemo/actions"
 NEMO_ACTIONS_SCRIPTS_DIR="${INSTALL_PATH}/scripts"
 
-# Fancy red-colored `error` function with `stderr` redirection with `exit`.
-error () {
-    { printf '\E[31m'; echo ":: $@"; printf '\E[0m'; } >&2
+Help() {
+   notice "Available options for installing sgs.nemo-actions"
+   notice
+   notice "Syntax: ./install.sh [install|uninstall|reinstall]"
+   notice "options:"
+   notice "install    Install only sgs.nemo-actions"
+   notice "uninstall  Uninstall sgs.nemo-actions"
+   notice "reinstall  Reinstall the sgs.nemo-actions"
+   notice
 }
-
-info() {
-  { printf '\E[32m'; echo ":: $1"; printf '\E[0m'; } >&2
-}
-
-notice() {
-  { printf '\E[33m'; echo ":: $1"; printf '\E[0m'; } >&2
-}
-
-cleanup() {
-    err=$?
-    info "Cleaning stuff up..."
-    trap '' EXIT INT TERM
-    exit $err
-}
-sig_cleanup() {
-    trap '' EXIT # some shells will call EXIT after the INT handler
-    false # sets $?
-    error "Force exit from script..."
-    cleanup
-}
-trap 'cleanup; exit 1' EXIT
-trap sig_cleanup HUP INT QUIT TERM
 
 case "$1" in
   install)
-    info "Install sgs.nemo-actions on current user profile: $CURRENT_USER"
 
+    info "Install sgs.nemo-actions on current user profile: $CURRENT_USER"
     if ! [ -d "$INSTALL_PATH" ]; then
       error "The Nemo actions folder is not found in user home folder"
       error "Check if you have Nemo installed"
@@ -104,7 +85,7 @@ case "$1" in
     ./"$0" install
   ;;
   *)
-    echo $USAGE
+    Help
     exit 1
     ;;
 esac

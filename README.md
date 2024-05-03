@@ -43,46 +43,63 @@ Then clone this repo
 git clone https://github.com/SoftGeekRO/sgs.nemo-actions.git
 ```
 
+To have a functional Nemo actions pack you have to install first all the
+applications that are used by the Nemo actions. For this use the bash
+script install_app.sh. _For this script to run you must have root permissions_.
+
 Having cloned the repo you can either install all the actions using the
 commands below or refer to the index of actions to install individual actions.
 
-To install all the nemo actions use the install.sh bash file. Make sure that the
+To install all the nemo actions use the **install.sh** bash file and for
+applications use **install_apps.sh**. Make sure that the
 file is executable.
 
+### Install applications
 ```bash
-chmod a+x install.sh
+chmod a+x install.sh install_apps.sh
 ```
-For install.sh you have three options: _install_, _uninstall_ and _reinstall_.
+For install_apps.sh script you have:
+_(all|install|uninstall|reinstall|installBulky|uninstallBulky|listPackages)_
 
+* **listPackages** command will show a list of what packages are going to be installed
+
+To perform the installation for dependency applications use:
+
+```bash
+sudo ./install_apps.sh all
+```
+
+### Install sgs.nemo-actions
+
+For install.sh you have three options:
+_(install|uninstall|reinstall|)_
+
+To install sgs.nemo-actions use:
 ```bash
 ./install.sh install
 ```
-this command will crate soft links of all the actions inside you home profile Nemo
+this command will create soft links of all the actions inside you home profile Nemo
 actions folder, under `/~.local/share/nemo/actions`
 
-### Other installation needed
-  - install zenity
-  - install lame (to use audio conversion scripts)
-  - restart nemo (`nemo -q; nemo`)
-
-### Other dependencies
+### Individual packages list
 
   - Imagemagick (`apt install imagemagick`) to use images resizing
   - ffmpeg (`apt install ffmpeg`) to use video tools
   - sox (`apt install sox`) to use wav's concatenation tools
   - lame (`apt install lame`) to use audio conversions tools
   - flac (`apt install flac`) to use flac compression tools
-  - pdfimages (`apt install poppler-utils`) to use PDF images extraction tools
-  - pdf_repair (`apt install qpdf`) to use PDF file repairing tools
+  - poppler-utils (`apt install poppler-utils`) Poppler is a PDF rendering library based on the xpdf-3.0 code base.
+  - qpdf (`apt install qpdf`) QPDF is a command-line tool and C++ library that performs content-preserving transformations on PDF files
   - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
   - img2pdf (`apt install img2pdf`) to convert any image to pdf
-  - Thunar (`apt install thunar`) to use mass rename action
-
-All in one:
-
-```bash
-apt install imagemagick ffmpeg sox lame flac pdfimages pdf_repair poppler-utils pdf2djvu thunar img2pdf
-```
+  - pdftk (`apt install pdftk`) PDFtk is a simple tool for doing everyday things with PDF documents
+  - ghostscript (`apt install ghostscript`) Ghostscript is an interpreter for the PostScript®  language and PDF files.
+  - tesseract-ocr (`apt install tesseract-ocr`) Tesseract Open Source OCR Engine
+  - tesseract-ocr-eng (`apt install tesseract-ocr-eng`) Tesseract Open Source OCR Engine for English documents
+  - tesseract-ocr-ron (`apt install tesseract-ocr-eron`) Tesseract Open Source OCR Engine for Romanian documents
+  - pdfimages (`apt install poppler-utils`) to use PDF images extraction tools
+  - pdf_repair (`apt install qpdf`) to use PDF file repairing tools
+  - zenity (`apt install zenity`) Zenity enables you to create the various types of simple dialog.
 
 ## Nemo Action updating
 
