@@ -142,3 +142,5 @@ nemo -q; NEMO_ACTION_VERBOSE=1 nemo --no-desktop
 
 ### Some tricks:
 - the space between `"` and `%F>` is important; ie `"%F>` will **not** work
+
+![plot](docs/title.svg)
