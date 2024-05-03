@@ -20,10 +20,14 @@ descriptions.
 
 
 ## Others actions
-* **print** : print selected file using default printer settings
-* **printlibreoffice** : print LibreOffice files with default LibreOffice print settings
-* **refresh** : refresh the Nemo interface, basically is a right click menu shortcut for CTRL+R
-* **python3** : Run any python file using python3 exec
+|                      |                                                                                 |
+|---------------------:|:--------------------------------------------------------------------------------|
+|            **print** | print selected file using default printer settings                              |
+| **printlibreoffice** | print LibreOffice files with default LibreOffice print settings                 |
+|          **refresh** | refresh the Nemo interface, basically is a right click menu shortcut for CTRL+R |
+|          **python3** | Run any python file using python3 exec                                          |
+|      **mass_rename** | Rename multiple files using Bulky applications                                  |
+
 
 ## Nemo Action installation
 
