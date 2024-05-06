@@ -8,9 +8,9 @@ qpdf
 pdf2djvu
 img2pdf
 pdftk
-zenity
 ghostscript
 tesseract-ocr
 tesseract-ocr-eng
 tesseract-ocr-ron
 exactimage
+zenity

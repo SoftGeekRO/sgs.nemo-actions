@@ -9,13 +9,10 @@
 # %p - insert display name of parent directory
 # %D - insert device path of file (i.e. /dev/sdb1)
 
-Name=Images to PDF
-Comment=Create PDF file containing selected images. PDF filename is deducted from given files names.
-Exec=<scripts/pdfscripts/img2pdf.py %F>
-EscapeSpaces=true
-Terminal=false
-Quote=double
+Name=Downsize PDF
+Comment=Downsize selected PDF document and backup the original file
+Exec=<scripts/pdf/pdf-downsizer.sh "%F">
 Icon-Name=pdf
-Selection=notnone
-Mimetypes=image/*;
-Dependencies=img2pdf;
+Selection=s
+Extensions=pdf;
+Dependencies=zenity;ghostscript;

@@ -7,12 +7,11 @@ source $(dirname $0)/lib.sh
 
 [[ "$(id -u)" -eq 0 ]] && { error "You are running this as root. Run as regular user" >&2; exit $E_NOTROOT; }
 
-CURRENT_USER="$(id -un)"
 WORKING_DIR="$(dirname "$(readlink -f "$0")")"
 BASENAME=$(basename $(pwd))
 SCRIPT_NAME=$(basename "$0")
 
-INSTALL_PATH="/home/${CURRENT_USER}/.local/share/nemo/actions"
+INSTALL_PATH="/home/${HOME}/.local/share/nemo/actions"
 NEMO_ACTIONS_SCRIPTS_DIR="${INSTALL_PATH}/scripts"
 
 Help() {
@@ -29,7 +28,7 @@ Help() {
 case "$1" in
   install)
 
-    info "Install sgs.nemo-actions on current user profile: $CURRENT_USER"
+    info "Install sgs.nemo-actions on current user profile: $$(id -un)"
     if ! [ -d "$INSTALL_PATH" ]; then
       error "The Nemo actions folder is not found in user home folder"
       error "Check if you have Nemo installed"
