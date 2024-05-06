@@ -11,7 +11,7 @@ WORKING_DIR="$(dirname "$(readlink -f "$0")")"
 BASENAME=$(basename $(pwd))
 SCRIPT_NAME=$(basename "$0")
 
-INSTALL_PATH="/home/${HOME}/.local/share/nemo/actions"
+INSTALL_PATH="${HOME}/.local/share/nemo/actions"
 NEMO_ACTIONS_SCRIPTS_DIR="${INSTALL_PATH}/scripts"
 
 Help() {

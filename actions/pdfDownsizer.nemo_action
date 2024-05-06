@@ -11,8 +11,9 @@
 
 Name=Downsize PDF
 Comment=Downsize selected PDF document and backup the original file
-Exec=<scripts/pdf/pdf-downsizer.sh "%F">
+Exec=<scripts/pdf/pdfDownsizer.sh "%F">
 Icon-Name=pdf
-Selection=s
-Extensions=pdf;
-Dependencies=zenity;ghostscript;
+Selection=m
+Extensions=*.pdf;
+#Dependencies=zenity;ghostscript;
+Dependencies=zenity;
