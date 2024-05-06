@@ -16,6 +16,6 @@ EscapeSpaces=true
 Terminal=false
 Quote=double
 Icon-Name=pdf
-Selection=notnone
+Selection=m
 Mimetypes=image/*;
 Dependencies=img2pdf;
