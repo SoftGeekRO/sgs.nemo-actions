@@ -119,8 +119,11 @@ check_smaller () {
 	ISIZE="$(wc -c "$1" | awk '{ print $1 }')"
 	OSIZE="$(wc -c "$2" | awk '{ print $1 }')"
 	if [ "$ISIZE" -lt "$OSIZE" ]; then
-		echo "Input smaller than output, doing straight copy" >&2
-		cp "$1" "$2"
+	  zenity --error  \
+	    --title="$shrink_check_smaller_title" \
+	    --text="$shrink_check_smaller_text" \
+	    --no-wrap
+	  rm "$2"
 	fi
 }
 
@@ -134,8 +137,3 @@ shrink "$iFile" "$SHRINK_FILENAME" "$IMG_RESOLUTION" "$GRAYSCALE" "$PDF_VERSION"
 
 # Check that the output is actually smaller.
 check_smaller "$iFile" "$SHRINK_FILENAME"
-
-# zenity --info  \
-#   --title="$finished_title" \
-#   --text="$downsize_finished_text" \
-#   --no-wrap

@@ -1,7 +1,7 @@
 [Nemo Action]
 Active=true
 Name=Convert to WebP
-Comment=Convert any image to WebP with quality 90
+Comment=Convert '%f' to WebP with quality 90
 Exec=bash -c "mogrify -format webp -quality 90 %F"
 EscapeSpaces=true
 Separator=,

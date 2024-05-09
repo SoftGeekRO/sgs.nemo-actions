@@ -1,7 +1,7 @@
 [Nemo Action]
 Active=true
 Name=Convert to PNG
-Comment=Convert any image to PNG with 90 quality
+Comment=Convert '%f' to PNG with 90 quality
 Exec=bash -c "mogrify -format png -quality 90 %F"
 EscapeSpaces=true
 Separator=,

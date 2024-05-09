@@ -1,7 +1,7 @@
 [Nemo Action]
 Active=true
 Name=Resize 1920px
-Comment=Resize image to 1920px using ImageMagick's
+Comment=Resize '%f' to 1920px using ImageMagick's
 Exec=bash -c "mkdir -p %P/resized; convert %F -resize '1920>' -set filename: %P/resized/'%t_%wx%h.%e' '%[filename:]'"
 EscapeSpaces=false
 Separator=,

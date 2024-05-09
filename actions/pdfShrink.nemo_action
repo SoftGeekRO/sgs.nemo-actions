@@ -9,9 +9,9 @@
 # %p - insert display name of parent directory
 # %D - insert device path of file (i.e. /dev/sdb1)
 
-Name=Downsize PDF
-Comment=Downsize selected PDF document and backup the original file
-Exec=<scripts/pdf/pdfDownsizer.sh "%F">
+Name=Shrink PDF
+Comment=Shrink the '%f' PDF document and backup the original file
+Exec=<scripts/pdf/pdfShrink.sh "%F">
 Icon-Name=pdf
 Selection=single
 Extensions=pdf;

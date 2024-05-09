@@ -10,7 +10,7 @@
 # %D - insert device path of file (i.e. /dev/sdb1)
 
 Name=Resize 1200px
-Comment=Resize image to 1200px using ImageMagick's
+Comment=Resize '%f' to 1200px using ImageMagick's
 Exec=bash -c "mkdir -p %P/resized; convert %F -resize '1200>' -set filename: %P/resized/'%t_%wx%h.%e' '%[filename:]'"
 EscapeSpaces=true
 Icon-Name=sound
