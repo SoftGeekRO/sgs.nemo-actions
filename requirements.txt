@@ -1,1 +1,2 @@
 pypdftk>=0.5
+pexpect>=4.9.0

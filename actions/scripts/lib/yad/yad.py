@@ -172,8 +172,9 @@ class YAD:
 			retval = retval.split('\n')[-1]
 			return datetime.strptime(
 				retval, locale.nl_langinfo(locale.D_FMT)).date()
-		# month, day, year = [int(x) for x in re.split('[-,/,.]', retval)]
-		# return date(year, month, day)
+
+	# month, day, year = [int(x) for x in re.split('[-,/,.]', retval)]
+	# return date(year, month, day)
 
 	# Color Dialog
 	def Color(self, color='#ffffff', extra=False, palette='/etc/X11/rgb.txt',
