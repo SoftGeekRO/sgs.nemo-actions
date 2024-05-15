@@ -29,11 +29,12 @@ descriptions.
 ## Others actions
 |                      |                                                                                 |
 |---------------------:|:--------------------------------------------------------------------------------|
+|          **refresh** | refresh the folder content. Similar with Refresh from Windows                   |
 |            **print** | print selected file using default printer settings                              |
 | **printlibreoffice** | print LibreOffice files with default LibreOffice print settings                 |
 |          **refresh** | refresh the Nemo interface, basically is a right click menu shortcut for CTRL+R |
 |          **python3** | Run any python file using python3 exec                                          |
-|      **mass_rename** | Use [Bulky](https://github.com/linuxmint/bulky) to mass rename selected files   |
+|       **massRename** | Use [Bulky](https://github.com/linuxmint/bulky) to mass rename selected files   |
 
 
 ## Nemo Action installation

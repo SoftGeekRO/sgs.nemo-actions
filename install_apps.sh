@@ -28,6 +28,11 @@ listPackages() {
   printList $(cat packages.list)
 }
 
+installPythonPackages() {
+  info "Install all the Python packages"
+  pip install -r requirements.txt
+}
+
 installPackages() {
   info "Installing the must-have pre-requisites"
   RED='\033[0;37m'
@@ -64,11 +69,13 @@ removeBulky() {
 case "$1" in
   all)
     info "Install all the packages for Nemo actions and Bulky"
+    installPythonPackages
     installPackages
     installBulky
   ;;
   install)
     info "Install all the packages for Nemo actions"
+    installPythonPackages
     installPackages
   ;;
   uninstall)

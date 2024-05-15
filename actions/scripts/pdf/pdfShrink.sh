@@ -29,11 +29,11 @@ fname_subfix="$filedir/$fname_name_subfix"
 fname_datetime="$filedir/$fname_name_datetime"
 
 configDialog() {
-  OUTPUT=$(yad --title="Config PDF shrink" --form --separator="," \
+  OUTPUT=$(yad --title="$pdfShrink_config_title" --form --separator="," \
     --geometry 400x100 \
-    --field="Make images grayscale:CHK" \
-    --field="Image Quality::CB" \
-    --field="Shrink filename::CB" \
+    --field="$pdfShrink_config_field_grayscale:CHK" \
+    --field="$pdfShrink_config_field_image_quality::CB" \
+    --field="$pdfShrink_config_field_shrink_filename::CB" \
     '' \
     'Low\!^Medium\!High' \
     'DateTime\!^Subfix' \

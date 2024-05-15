@@ -9,10 +9,13 @@
 # %p - insert display name of parent directory
 # %D - insert device path of file (i.e. /dev/sdb1)
 
-Name=Shrink PDF
-Comment=Shrink the '%f' PDF document and backup the original file
-Exec=<scripts/pdf/pdfShrink.sh "%F">
-Icon-Name=pdf
-Selection=single
+Name=PDF Merger
+Comment=Merge several PDF-Documents into one
+Exec=<scripts/pdf/pdfMerge.py "%F">
+Icon-Name=gnome-mime-application-x-compress
+Quote=double
+EscapeSpaces=true
+Separator=,
+Selection=m
 Extensions=pdf;
-Dependencies=zenity;ghostscript;
+Dependencies=zenity;pdftk;
