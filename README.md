@@ -25,6 +25,7 @@ descriptions.
 | **pdf2images** | use **pdfimages** command (`poppler-utils` package in Debian) to convert PDF pages in images and place them in "pdf2images" subdir                            |
 |    **img2pdf** | use [img2pdf utility](https://pypi.org/project/img2pdf/) to create a PDF file from selected images                                                            |
 |  **pdfShrink** | Shrink pdf to a decent size, using [ghostscript](https://www.ghostscript.com/). You can chose to make images grayscale and/or change the resolution of images |
+|   **pdfMerge** | Merge two or more pdf files in to a single pdf file, files will be merge using alphabetical name of the files.                                                |
 
 ## Others actions
 |                      |                                                                                 |
