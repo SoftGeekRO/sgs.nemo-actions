@@ -17,8 +17,35 @@ class PDF(SGSActions):
 		super().__init__(*args, **kwargs)
 
 	def merge_files(self):
+		merger = PdfWriter()
+
 		out_filename = "_".join(
-			[Path(i).stem.replace(" ", "_") for i in self.working_files])
+			[i.stem.replace(" ", "_") for i in self.working_files])
+
+		files_path = self.working_files[0].parent
+
+		self.dialog_fields = (
+			("", "Output filename(omit extension)", out_filename),
+			("CB", "Delete source files?", ("Accept", "^Deny")),
+		)
+
+		dialog_data = self.form(
+			f'Config the PDF merge files',
+			self.dialog_fields,
+			cols=1,
+			width=500,
+			height=100
+		)
+
+		for pdf in self.working_files:
+			merger.append(pdf)
+
+		merger.write(f"{files_path}/{dialog_data.get(0)}.pdf")
+		merger.close()
+
+		if dialog_data.get(1) == "Accept":
+			for file in self.working_files:
+				os.remove(file)
 
 	def metadata_editor(self):
 		reader = PdfReader(self.working_files[0])
