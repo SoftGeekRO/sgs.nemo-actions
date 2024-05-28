@@ -108,7 +108,8 @@ actions folder, under `/~.local/share/nemo/actions`
   - qpdf (`apt install qpdf`) QPDF is a command-line tool and C++ library that performs content-preserving transformations on PDF files
   - pdf2djvu (`apt install pdf2djvu`) to use PDF to DJVU conversion tool
   - img2pdf (`apt install img2pdf`) to convert any image to pdf
-  - pdftk (`apt install pdftk`) PDFtk is a simple tool for doing everyday things with PDF documents
+  - pdftk (`apt install pdftk`) PDFtk is a simple tool for doing everyday things with PDF documents **(in the future possible to remove from the apps)**
+  - pypdf (`apt install pypdf`) [pypdf](https://github.com/py-pdf/pypdf) pypdf is a free and open-source pure-python PDF library capable of splitting, merging, cropping, and transforming
   - ghostscript (`apt install ghostscript`) Ghostscript is an interpreter for the PostScript®  language and PDF files.
   - tesseract-ocr (`apt install tesseract-ocr`) Tesseract Open Source OCR Engine
   - tesseract-ocr-eng (`apt install tesseract-ocr-eng`) Tesseract Open Source OCR Engine for English documents

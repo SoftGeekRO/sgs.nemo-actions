@@ -1,2 +1,6 @@
 pypdftk>=0.5
+pypdf>=4.2.0
 pexpect>=4.9.0
+rich>=12.1.0
+typing-extensions
+rich

@@ -5,7 +5,7 @@
 
 source $(dirname $0)/lib.sh
 
-is_root || { error "You are running this as regular user. Run as root" >&2; exit $E_NOTROOT; }
+#is_root || { error "You are running this as regular user. Run as root" >&2; exit $E_NOTROOT; }
 
 USAGE="Usage: $SCRIPT_NAME {all | install | uninstall | reinstall | installBulky}"
 
@@ -30,7 +30,7 @@ listPackages() {
 
 installPythonPackages() {
   info "Install all the Python packages"
-  pip install -r requirements.txt
+  pip -q install -r requirements.txt
 }
 
 installPackages() {
@@ -40,30 +40,30 @@ installPackages() {
   while read -r package; do
     info "${package} - ${RED}$(packageInfo ${package})${NC}"
     DEBIAN_FRONTEND=noninteractive
-    apt install -yqq -o=Dpkg::Use-Pty=0 ${package} 2>/dev/null >/dev/null
+    sudo apt install -yqq -o=Dpkg::Use-Pty=0 ${package} 2>/dev/null >/dev/null
   done < <(cat packages.list)
 }
 
 removePackages() {
-  apt -yq remove $(cat packages.list) 2>/dev/null >/dev/null
+  sudo apt -yq remove $(cat packages.list) 2>/dev/null >/dev/null
 }
 
 installBulky() {
   info "Install necessary apps for build the Bulky..."
-  apt install -y git dpkg-dev debhelper python3-magic 2>/dev/null >/dev/null
+  sudo apt install -y git dpkg-dev debhelper python3-magic 2>/dev/null >/dev/null
 
   info "Clone the Bulky repository"
-  git clone https://github.com/linuxmint/bulky.git /tmp/bulky 2>/dev/null >/dev/null
+  sudo git clone https://github.com/linuxmint/bulky.git /tmp/bulky 2>/dev/null >/dev/null
 
   cd /tmp/bulky/
-  dpkg-buildpackage -uc -us 2>/dev/null >/dev/null
-  dpkg -i ../bulky*.deb 2>/dev/null >/dev/null
+  sudo dpkg-buildpackage -uc -us 2>/dev/null >/dev/null
+  sudo dpkg -i ../bulky*.deb 2>/dev/null >/dev/null
   info "Cleanup after bulky clone and build"
-  rm -R /tmp/bulky
+  sudo rm -R /tmp/bulky
 }
 
 removeBulky() {
-  apt remove -y bulky 2>/dev/null >/dev/null
+  sudo apt remove -y bulky 2>/dev/null >/dev/null
 }
 
 case "$1" in

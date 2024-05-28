@@ -1,0 +1,18 @@
+[Nemo Action]
+
+# Standard tokens that can be used in the Name, Comment (tooltip) and Exec fields:
+#
+# %U - insert URI list of selection
+# %F - insert path list of selection
+# %P - insert path of parent (current) directory
+# %f or %N (deprecated) - insert display name of first selected file
+# %p - insert display name of parent directory
+# %D - insert device path of file (i.e. /dev/sdb1)
+
+Name=Edit PDF Metadata
+Comment=Change the Title and the Author of the Document
+Exec=<"scripts/pdf/pdfMetadata.py" "%F">
+Icon-Name=pdf
+Selection=s
+Extensions=pdf;
+Dependencies=zenity;pdftk;
