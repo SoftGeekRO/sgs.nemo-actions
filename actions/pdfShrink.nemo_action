@@ -11,7 +11,7 @@
 
 Name=Shrink PDF
 Comment=Shrink the '%f' PDF document and backup the original file
-Exec=<scripts/pdf/pdfShrink.sh "%F">
+Exec=<"scripts/pdf/pdfShrink.py" "%F">
 Icon-Name=pdf
 Selection=single
 Extensions=pdf;

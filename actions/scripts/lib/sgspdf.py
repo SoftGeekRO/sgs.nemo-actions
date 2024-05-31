@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 
 from pypdf import PdfReader, PdfWriter
@@ -76,6 +77,9 @@ class PDF(SGSActions):
 
 		final_metadata = {}
 
+		if dialog_data is None:
+			sys.exit(0)
+
 		for ndx, md in enumerate(metadata_dialog_map):
 			dialog_val = dialog_data.get(ndx)
 
@@ -101,3 +105,25 @@ class PDF(SGSActions):
 
 		with open(self.working_files[0], "wb") as f:
 			writer.write(f)
+
+	def pdf_shrink(self):
+		reader = PdfReader(self.working_files[0])
+		writer = PdfWriter()
+
+		self.dialog_fields = (
+			("CB", "Remove duplicates:", ("YES", "^NO")),
+			("CB", "Remove images:", ("YES", "^NO")),
+			("CB", "Image Quality:", ("Low", "^Medium", "High")),
+			("CB", "Shrink filename:", ("DateTime", "^Subfix")),
+			("LBL", "Some PDF documents contain the same object multiple times."),
+			("LBL", "Removing all the images from pdf file"),
+			("LBL", "Change image resolution 72/150/300dpi"),
+			("LBL", "Subfix for the output file"),
+		)
+
+		dialog_data = self.form(
+			f'Config PDF shrink',
+			self.dialog_fields
+		)
+
+
