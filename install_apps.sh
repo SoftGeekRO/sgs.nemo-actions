@@ -14,12 +14,13 @@ Help() {
    notice
    notice "Syntax: ./install.sh [all|install|uninstall|reinstall|installBulky|uninstallBulky|listPackages]"
    notice "options:"
-   notice "all            Install all packages and Bulky."
-   notice "install        Install only the default packages without Bulky"
-   notice "uninstall      Uninstall the default packages"
-   notice "reinstall      Reinstall the packages and install again"
-   notice "installBulky   Build and install Bulky from sources"
-   notice "uninstallBulky Remove Bulky from system"
+   notice "all                Install all packages and Bulky."
+   notice "install            Install only the default packages without Bulky"
+   notice "uninstall          Uninstall the default packages"
+   notice "reinstall          Reinstall the packages and install again"
+   notice "installBulky       Build and install Bulky from sources"
+   notice "uninstallBulky     Remove Bulky from system"
+   notice "installPyPackages  Install only Python packages"
    notice "listPackages   Show a list of what packages are going to be installed"
    notice
 }
@@ -30,7 +31,7 @@ listPackages() {
 
 installPythonPackages() {
   info "Install all the Python packages"
-  pip -q install -r requirements.txt
+  pip install -r requirements.txt
 }
 
 installPackages() {
@@ -92,6 +93,9 @@ case "$1" in
   uninstallBulky)
     info "Uninstall Bulky from the system"
     removeBulky
+  ;;
+  installPyPackages)
+    installPythonPackages
   ;;
   listPackages)
     listPackages

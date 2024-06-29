@@ -4,3 +4,6 @@ pexpect>=4.9.0
 rich>=12.1.0
 typing-extensions
 rich
+setuptools>=70.0.0
+PyGObject>=3.42.1
+sgzenity>=0.1.5
